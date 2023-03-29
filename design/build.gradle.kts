@@ -174,7 +174,7 @@ afterEvaluate {
     publishing {
         publications {
             //creates a meven publication called release
-            create<MavenPublication>("release") {
+            register<MavenPublication>("release") {
                 groupId = "ac.uk.nottingham.design"
                 artifactId = "design"
                 version = "1.0"
@@ -218,8 +218,8 @@ afterEvaluate {
                 url = uri("https://maven.pkg.github.com/UoNMobileDev/mobile_libs")
                 credentials {
 //                basic(BasicAuthentication)
-                    username= project.findProperty("gpr.user") as String? ?:System.getenv("GITHUB_ACTION")
-                    password= project.findProperty("gpr.key") as String? ?:System.getenv("GITHUB_TOKEN")
+                    username= project.findProperty("release.user") as String? ?:System.getenv("GITHUB_ACTION")
+                    password= project.findProperty("release.key") as String? ?:System.getenv("GITHUB_TOKEN")
 
 //                    username="UoNMobileDev"
 //                    password="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"
