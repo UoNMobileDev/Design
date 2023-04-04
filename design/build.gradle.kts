@@ -1,3 +1,6 @@
+import java.lang.System.load
+import java.util.*
+import java.io.FileInputStream
 //plugins {
 //    id("build.android.library")
 //    id("build.android.library.compose")
@@ -98,6 +101,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("maven-publish")
+//    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -132,6 +136,9 @@ android {
         compose=true
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion= "1.4.0"
+    }
     publishing {
         singleVariant("release"){
             withSourcesJar()
@@ -158,26 +165,20 @@ dependencies {
     api("androidx.compose.ui:ui-util:1.4.0")
     api("androidx.compose.runtime:runtime:1.4.0")
 
-
-
-
-
-
-
-
-
-
-
 }
 
+val githubProperties = Properties()
+githubProperties.load(FileInputStream(rootProject.file("design/github.properties")))
+
 afterEvaluate {
+
     publishing {
         publications {
             //creates a meven publication called release
             register<MavenPublication>("release") {
                 groupId = "ac.uk.nottingham.design"
                 artifactId = "design"
-                version = "1.0"
+                version = "1.1.5"
 
 
                 //applies the component fro the release build variant
@@ -198,35 +199,24 @@ afterEvaluate {
 //                }
 //            }
 //        }
-        //for github private
-//        repositories {
-//            maven {
-//                name= "GitHubPackages"
-//                url = uri("https://maven.pkg.github.com/123nishan/android_design_lib")
-//                credentials {
-////                basic(BasicAuthentication)
-//                    username="123nishan"
-//                    password="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"
-//
-//                }
-//            }
-//        }
+
         //for github organisation
         repositories {
             maven {
                 name= "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/UoNMobileDev/mobile_libs")
+                url = uri("https://maven.pkg.github.com/UoNMobileDev/Design")
                 credentials {
-//                basic(BasicAuthentication)
-                    username= project.findProperty("release.user") as String? ?:System.getenv("GITHUB_ACTION")
-                    password= project.findProperty("release.key") as String? ?:System.getenv("GITHUB_TOKEN")
-
-//                    username="UoNMobileDev"
-//                    password="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"
-
+/**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN
+ * OR
+ * Set environment variable
+ * */
+                    username= githubProperties["GITHUB_USER"] as String? ?: System.getenv("GITHUB_USER")
+                    password= githubProperties["GITHUB_TOKEN"] as String? ?: System.getenv("GITHUB_TOKEN")
                 }
             }
         }
 
     }
 }
+
+
