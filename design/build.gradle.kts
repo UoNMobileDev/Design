@@ -85,7 +85,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "ac.uk.nottingham.design"
                 artifactId = "design"
-                version = "1.1.6"
+                version = "1.1.7"
 
 
                 //applies the component fro the release build variant
