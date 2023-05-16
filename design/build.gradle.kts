@@ -1,100 +1,7 @@
 import java.lang.System.load
 import java.util.*
 import java.io.FileInputStream
-//plugins {
-//    id("build.android.library")
-//    id("build.android.library.compose")
-//    id("build.android.library.jacoco")
-//    id ("maven-publish")
-//}
-//
-//
-//android {
-//    publishing {
-//        singleVariant("release"){
-//            withSourcesJar()
-//        }
-//    }
-//    defaultConfig {
-//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-//    }
-//    lint {
-//        checkDependencies = true
-//    }
-//    namespace = "ac.uk.nottingham.studentapp.design"
-//
-//}
-//dependencies {
-//    implementation(libs.androidx.core.ktx)
-//    implementation(libs.coil.kt.compose)
-//    api(libs.androidx.compose.foundation)
-//    api(libs.androidx.compose.foundation.layout)
-//    implementation(libs.androidx.compose.material.iconsExtended)
-//    api(libs.androidx.compose.material3)
-//    debugApi(libs.androidx.compose.ui.tooling)
-//    api(libs.androidx.compose.ui.tooling.preview)
-//    api(libs.androidx.compose.ui.util)
-//    api(libs.androidx.compose.runtime)
-////    lintPublish(project(":lint"))
-////    androidTestImplementation(project(":core:testing"))
-//}
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            //creates a meven publication called release
-//            create<MavenPublication>("release") {
-//                groupId = "ac.uk.nottingham.design"
-//                artifactId = "design"
-//                version = "1.0"
-//
-//
-//                //applies the component fro the release build variant
-//                from(components["release"])
-//
-//            }
-//        }
-//        //repositories to which gradle can publish artifacts for azure
-////        repositories {
-////            maven {
-////                name= "Unikit_Android_Library"
-////                url= uri("https://pkgs.dev.azure.com/UniversityOfNottingham/1b9c5117-4c85-41e1-bd05-90877ad18f1c/_packaging/Unikit_Android_Library/maven/v1")
-////                credentials {
-//////                basic(BasicAuthentication)
-////                    username="UniversityOfNottingham"
-////                    password="b2pjb6jl466mxmq6j653jkelcjwzwok6lao5mcwfrw2ato5pp5rq"
-////
-////                }
-////            }
-////        }
-//    //for github private
-////        repositories {
-////            maven {
-////                name= "GitHubPackages"
-////                url = uri("https://maven.pkg.github.com/123nishan/android_design_lib")
-////                credentials {
-//////                basic(BasicAuthentication)
-////                    username="123nishan"
-////                    password="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"
-////
-////                }
-////            }
-////        }
-//        //for github organisation
-//        repositories {
-//            maven {
-//                name= "GitHubPackages"
-//                url = uri("https://maven.pkg.github.com/UoNMobileDev/mobile_libs")
-//                credentials {
-////                basic(BasicAuthentication)
-//                    username="UoNMobileDev"
-//                    password="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"
-//
-//                }
-//            }
-//        }
-//
-//    }
-//}
+
 
 
 plugins {
@@ -178,7 +85,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "ac.uk.nottingham.design"
                 artifactId = "design"
-                version = "1.1.5"
+                version = "1.1.6"
 
 
                 //applies the component fro the release build variant
