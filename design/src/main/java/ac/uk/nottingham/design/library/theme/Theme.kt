@@ -12,6 +12,35 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 
+val LightNottinghamColorScheme = lightColorScheme(
+    primary = NottinghamBlue,
+    onPrimary = Color.White,
+    primaryContainer = Color.White,
+    onPrimaryContainer = NottinghamBlue,
+    secondary = PioneeringPink,
+    onSecondary = Color.White,
+    secondaryContainer = Color.White,
+    onSecondaryContainer = PioneeringPink,
+    tertiary = MalaysiaSkyBlue,
+    onTertiary = Color.White,
+    tertiaryContainer = Color.White,
+    onTertiaryContainer = MalaysiaSkyBlue,
+    error = Red40,
+    onError = Color.White,
+    errorContainer = Red90,
+    onErrorContainer = Red10,
+    background = DarkPurpleGray99,
+    onBackground = DarkPurpleGray10,
+    surface = DarkPurpleGray99,
+    onSurface = DarkPurpleGray10,
+    surfaceVariant = PurpleGray90,
+    onSurfaceVariant = PurpleGray30,
+    inverseSurface = DarkPurpleGray20,
+    inverseOnSurface = DarkPurpleGray95,
+    outline = PurpleGray50,
+
+)
+
 /**
  * Light default theme color scheme
  */
