@@ -43,10 +43,17 @@ object AppIcons {
     val VolumeOff = Icons.Rounded.VolumeOff
     val VolumeUp = Icons.Rounded.VolumeUp
 }
-/**
- * A sealed class to make dealing with [ImageVector] and [DrawableRes] icons easier.
- */
-sealed class Icon {
-    data class ImageVectorIcon(val imageVector: ImageVector) : Icon()
-    data class DrawableResourceIcon(@DrawableRes val id: Int) : Icon()
+
+object DefaultIcons {
+    val ArrowBack = R.drawable.arrow_back
+    val Map = R.drawable.map
+    val Explore = R.drawable.explore
+    val Walking = R.drawable.walking
+    val Time = R.drawable.time
+    val Search = R.drawable.search
+    val LocationOn = R.drawable.location_on
+    val Direction = R.drawable.direction
+    val Cross = R.drawable.cross
+
 }
+

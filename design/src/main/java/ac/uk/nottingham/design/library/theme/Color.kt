@@ -70,3 +70,10 @@ internal val Teal30 = Color(0xFF214D56)
 internal val Teal40 = Color(0xFF3A656F)
 internal val Teal80 = Color(0xFFA2CED9)
 internal val Teal90 = Color(0xFFBEEAF6)
+
+
+internal val NottinghamBlue = Color(0xFF10263B)
+internal val PioneeringPink = Color(0XFFD7336C)
+internal val MalaysiaSkyBlue = Color(0xFF009ac1)
+internal val Grey = Color(0xFF8C8887)
+internal val LightGrey = Color(0xFFEEEEEE)
