@@ -201,12 +201,12 @@ fun AppTheme (
 ){
     // color scheme
     val colorScheme = when {
-        androidTheme -> if (darkTheme) DarkAndroidColorScheme else LightAndroidColorScheme
+        androidTheme -> if (darkTheme) DarkAndroidColorScheme else LightNottinghamColorScheme
         !disableDynamicTheming && supportsDynamicTheming() -> {
             val context = LocalContext.current
             if  (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
-        else -> if (darkTheme) DarkDefaultColorScheme else LightAndroidColorScheme
+        else -> if (darkTheme) DarkDefaultColorScheme else LightNottinghamColorScheme
     }
 
     //Gradient
